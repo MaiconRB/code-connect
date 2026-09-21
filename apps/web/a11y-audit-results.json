@@ -1,0 +1,139 @@
+{
+  "timestamp": "2026-09-21T22:07:50.231Z",
+  "standards": [
+    "WCAG 2.0 AA",
+    "WCAG 2.1 AA",
+    "WCAG 2.2 AA"
+  ],
+  "totalScenarios": 21,
+  "passingScenarios": 21,
+  "failingScenarios": 0,
+  "results": [
+    {
+      "component": "Atom",
+      "scenario": "Atom: Button (default)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Atom",
+      "scenario": "Atom: Button (isLoading)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Atom",
+      "scenario": "Atom: Button (disabled)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Atom",
+      "scenario": "Atom: Input (inside label)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Atom",
+      "scenario": "Atom: Input (aria-label)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Atom",
+      "scenario": "Atom: Checkbox",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Atom",
+      "scenario": "Atom: Link",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Atom",
+      "scenario": "Atom: Divider",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Atom",
+      "scenario": "Atom: SocialButton",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Molecule",
+      "scenario": "Molecule: FormField (default)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Molecule",
+      "scenario": "Molecule: FormField (with error)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Molecule",
+      "scenario": "Molecule: SocialLoginGroup",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Organism",
+      "scenario": "Organism: LoginForm (idle)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Organism",
+      "scenario": "Organism: LoginForm (isLoading)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Organism",
+      "scenario": "Organism: RegisterForm (idle)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Organism",
+      "scenario": "Organism: RegisterForm (isLoading)",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Organism",
+      "scenario": "Organism: AuthBanner",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Template",
+      "scenario": "Template: AuthLayout",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Page",
+      "scenario": "Page: LoginPage",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Page",
+      "scenario": "Page: RegisterPage",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "component": "Root",
+      "scenario": "Root: App",
+      "violationsCount": 0,
+      "violations": []
+    }
+  ]
+}

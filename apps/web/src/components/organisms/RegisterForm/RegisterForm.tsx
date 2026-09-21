@@ -163,7 +163,7 @@ export const RegisterForm: FC<RegisterFormProps> = ({
         onGoogleClick={onGoogleLogin}
       />
 
-      <div className="pt-2 text-center text-xs text-[#BCBFC2] space-y-1">
+      <div className="pt-2 text-center text-xs text-brand-muted space-y-1">
         <p>Já tem conta?</p>
         <div>
           <Link

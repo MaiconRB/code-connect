@@ -16,6 +16,8 @@ export const AuthBanner: FC<AuthBannerProps> = ({
       <img
         src={imageSrc}
         alt={imageAlt}
+        fetchPriority="high"
+        decoding="async"
         className="w-full h-full object-cover rounded-2xl"
       />
     </div>

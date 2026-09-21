@@ -199,11 +199,48 @@ A interface deve ser estruturada seguindo rigorosamente a metodologia **Atomic D
 5.  **Páginas (`src/pages/`)**:
     *   Instâncias finais de páginas onde os dados reais, queries de API e estados globais são injetados nos templates e organismos.
 
-### 6.2 Estilização com Tailwind CSS
+### 6.2 Estilização com Tailwind CSS & Design Tokens (Cores e Tipografia)
 *   Utilize **Tailwind CSS** como ferramenta principal de estilização através de classes utilitárias.
 *   Evite CSS customizado solto (`.css` inline/separado) a menos que estritamente necessário para animações complexas ou resets globais.
 *   Mantenha classes organizadas e reutilize composições de classes ou componentes atômicos para evitar duplicação.
 *   Utilize suporte a variantes responsivas (`sm:`, `md:`, `lg:`) e de estado (`hover:`, `focus:`, `disabled:`).
+
+#### 6.2.1 Paleta de Cores e Tokens Semânticos (`@theme`)
+> **Regra Mandatória**: **É proibido o uso de valores hexadecimais arbitrários direto nas classes do Tailwind** (ex.: `bg-[#81FE88]`, `text-[#BCBFC2]`, `border-[#4E5558]`). Utilize sempre as classes utilitárias mapeadas no `@theme` em `apps/web/src/index.css`.
+
+| Token / Variável | Hex / Valor | Classes Tailwind Geradas | Aplicação Principal |
+| :--- | :--- | :--- | :--- |
+| `--color-brand-green` | `#81FE88` | `bg-brand-green`, `text-brand-green`, `border-brand-green`, `ring-brand-green` | Cor primária de destaque, botões principais, links ativos e bordas em foco |
+| `--color-brand-green-hover` | `#6DE775` | `hover:bg-brand-green-hover`, `hover:text-brand-green-hover` | Estado hover de botões e links primários |
+| `--color-brand-green-active` | `#5CD464` | `active:bg-brand-green-active` | Estado active/pressed de botões primários |
+| `--color-brand-petroleum` | `#132E35` | `bg-brand-petroleum`, `text-brand-petroleum` | Verde petróleo escuro |
+| `--color-brand-dark` | `#171D1F` | `bg-brand-dark`, `ring-offset-brand-dark` | Fundo principal de cards, modais e containers |
+| `--color-brand-dark-text` | `#131819` | `text-brand-dark-text` | Texto escuro sobre fundos claros/verdes de destaque |
+| `--color-brand-black` | `#01080E` | `bg-brand-black` | Fundo geral da aplicação (body/background) |
+| `--color-brand-grafite` | `#00090E` | `bg-brand-grafite` | Fundo grafite escuro |
+| `--color-brand-input` | `#3E4446` | `bg-brand-input` | Fundo padrão de inputs e botões secundários |
+| `--color-brand-input-hover` | `#4E5558` | `hover:bg-brand-input-hover` | Hover de botões secundários |
+| `--color-brand-input-active` | `#353A3C` | `active:bg-brand-input-active` | Active de botões secundários |
+| `--color-brand-border` | `#4E5558` | `border-brand-border` | Linhas divisórias e bordas sutis |
+| `--color-brand-border-card` | `#22292B` | `border-brand-border-card` | Bordas de cards e containers |
+| `--color-brand-placeholder` | `#8D9599` | `placeholder-brand-placeholder` | Placeholders de campos de formulário |
+| `--color-brand-hover-dark` | `#252C2E` | `hover:bg-brand-hover-dark` | Hover de botões sociais e botões ghost |
+| `--color-brand-active-dark` | `#1E2426` | `active:bg-brand-active-dark` | Active de botões sociais e botões ghost |
+| `--color-brand-muted` | `#BCBFC2` | `text-brand-muted` | Labels de formulários, textos secundários e legendas |
+| `--color-brand-gray` | `#888888` | `text-brand-gray`, `border-brand-gray` | Cinza neutro |
+| `--color-brand-offwhite` | `#E1E1E1` | `text-brand-offwhite` | Texto off-white claro |
+
+#### 6.2.2 Tipografia & Tamanhos de Fonte
+> **Regra Mandatória**: **Utilize os tokens de tamanho de fonte nativos do Tailwind mais próximos** em vez de tamanhos arbitrários com colchetes (ex.: `text-[15px]` ou `text-[18px]`).
+
+| Token Tailwind | Tamanho | Aplicação Típica |
+| :--- | :--- | :--- |
+| **`text-xs`** | 12px (0.75rem) | Labels de campos, mensagens de ajuda/erro, textos auxiliares e rodapés |
+| **`text-sm`** | 14px (0.875rem) | Textos de inputs, subtítulos de cabeçalho, links destacados |
+| **`text-base`** | 16px (1rem) | Corpo de texto padrão, botões de tamanho médio |
+| **`text-lg`** | 18px (1.125rem) | Parágrafos com ênfase, botões grandes |
+| **`text-xl`** | 20px (1.25rem) | Títulos de seções intermediárias |
+| **`text-2xl`** / **`text-3xl`** | 24px - 30px | Títulos de páginas e cards principais (`h1`, `h2`) |
 
 ### 6.3 🧪 Testes Obrigatórios para Componentes
 > **Regra Mandatória**: **Todo componente criado deve possuir um teste cobrindo o seu uso essencial.**
@@ -274,7 +311,8 @@ Ambos os projetos (`apps/api` e `apps/web`) e a raiz do monorepo devem utilizar 
 
 Ao implementar código ou refatorações neste projeto:
 1.  **Atomic Design & Testes**: Ao criar qualquer componente em `apps/web`, posicione-o na pasta atômica correta (`atoms`, `molecules`, etc.) e **crie imediatamente o arquivo de teste correspondente (`*.test.tsx`) cobrindo seu uso essencial**.
-2.  **Aderência REST**: Ao criar ou modificar endpoints em `apps/api`, garanta nomes no plural, verbos HTTP semânticos, status codes corretos e validação via DTOs.
-3.  **Isolamento no Monorepo**: Instale dependências com `--filter api` ou `--filter web`.
-4.  **Conventional Commits**: Sugira mensagens de commit seguindo rigorosamente a convenção especificada.
-5.  **Validação Final**: Execute testes e linter antes de considerar a tarefa finalizada.
+2.  **Design Tokens & Tailwind `@theme`**: Nunca utilize valores hexadecimais arbitrários (ex.: `bg-[#...]`, `text-[#...]`) ou fontes arbitrárias (ex.: `text-[15px]`). Utilize estritamente os tokens de cores definidos no `@theme` (`bg-brand-green`, `text-brand-muted`, etc.) e os tokens de tamanho padrão do Tailwind (`text-xs`, `text-sm`, `text-base`, `text-lg`, `text-2xl`, etc.).
+3.  **Aderência REST**: Ao criar ou modificar endpoints em `apps/api`, garanta nomes no plural, verbos HTTP semânticos, status codes corretos e validação via DTOs.
+4.  **Isolamento no Monorepo**: Instale dependências com `--filter api` ou `--filter web`.
+5.  **Conventional Commits**: Sugira mensagens de commit seguindo rigorosamente a convenção especificada.
+6.  **Validação Final**: Execute testes e linter antes de considerar a tarefa finalizada.

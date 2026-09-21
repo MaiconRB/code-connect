@@ -8,6 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "test": "vitest run",
+    "test:watch": "vitest",
+    "test:a11y": "vitest run src/test/a11y",
+    "test:a11y:watch": "vitest src/test/a11y",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -29,6 +32,7 @@
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2",
     "vite": "^8.2.0",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.11",
+    "vitest-axe": "^0.1.0"
   }
 }

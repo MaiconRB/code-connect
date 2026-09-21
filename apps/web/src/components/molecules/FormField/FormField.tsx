@@ -11,7 +11,7 @@ export const FormField = forwardRef<HTMLInputElement, FormFieldProps>(
   ({ label, id, error, className = "", ...inputProps }, ref) => {
     return (
       <div className={`flex flex-col w-full text-left ${className}`.trim()}>
-        <label htmlFor={id} className="block text-xs font-normal text-[#BCBFC2] mb-1.5">
+        <label htmlFor={id} className="block text-xs font-normal text-brand-muted mb-1.5">
           {label}
         </label>
         <Input

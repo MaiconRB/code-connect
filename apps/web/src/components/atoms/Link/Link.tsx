@@ -15,9 +15,9 @@ export const Link: FC<LinkProps> = ({
   const baseStyles = "transition-colors cursor-pointer select-none inline-flex items-center gap-1";
 
   const variantStyles = {
-    default: "text-[#81FE88] hover:text-[#6DE775] hover:underline",
-    muted: "text-xs text-[#BCBFC2] hover:text-white hover:underline",
-    highlight: "text-sm text-[#81FE88] hover:text-[#6DE775] font-medium hover:underline",
+    default: "text-brand-green hover:text-brand-green-hover hover:underline",
+    muted: "text-xs text-brand-muted hover:text-white hover:underline",
+    highlight: "text-sm text-brand-green hover:text-brand-green-hover font-medium hover:underline",
   }[variant];
 
   return (

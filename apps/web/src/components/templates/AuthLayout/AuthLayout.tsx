@@ -14,10 +14,10 @@ export const AuthLayout: FC<AuthLayoutProps> = ({
   children,
 }) => {
   return (
-    <div className="relative min-h-screen w-full bg-[#01080E] flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-hidden">
+    <div className="relative min-h-screen w-full bg-brand-black flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-hidden">
       {/* Background Decorative Chain Logos (Code Connect Watermark) */}
       <div
-        className="pointer-events-none absolute -top-12 -left-12 w-96 h-96 opacity-10 text-[#81FE88] select-none"
+        className="pointer-events-none absolute -top-12 -left-12 w-96 h-96 opacity-10 text-brand-green select-none"
         aria-hidden="true"
       >
         <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="12" className="w-full h-full">
@@ -27,7 +27,7 @@ export const AuthLayout: FC<AuthLayoutProps> = ({
       </div>
 
       <div
-        className="pointer-events-none absolute -bottom-16 -right-12 w-[480px] h-[480px] opacity-10 text-[#81FE88] select-none"
+        className="pointer-events-none absolute -bottom-16 -right-12 w-[480px] h-[480px] opacity-10 text-brand-green select-none"
         aria-hidden="true"
       >
         <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="12" className="w-full h-full">
@@ -37,7 +37,7 @@ export const AuthLayout: FC<AuthLayoutProps> = ({
       </div>
 
       {/* Main Authentication Card */}
-      <main className="relative z-10 w-full max-w-4xl bg-[#171D1F] rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border border-[#22292B]/50">
+      <main className="relative z-10 w-full max-w-4xl bg-brand-dark rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border border-brand-border-card/50">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column: Custom Banner */}
           <div className="w-full h-full flex items-center justify-center">
@@ -50,7 +50,7 @@ export const AuthLayout: FC<AuthLayoutProps> = ({
               <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 {title}
               </h1>
-              <p className="text-sm text-[#BCBFC2] mt-1.5">
+              <p className="text-sm text-brand-muted mt-1.5">
                 {subtitle}
               </p>
             </header>

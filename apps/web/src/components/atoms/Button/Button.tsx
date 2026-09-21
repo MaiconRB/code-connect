@@ -20,7 +20,7 @@ export const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    "inline-flex items-center justify-center font-semibold rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#81FE88] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none";
+    "inline-flex items-center justify-center font-semibold rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-green cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none";
 
   const sizeStyles = {
     sm: "px-3 py-1.5 text-sm gap-1.5",
@@ -30,24 +30,30 @@ export const Button: FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      "bg-[#81FE88] text-[#131819] hover:bg-[#6DE775] active:bg-[#5cd464] shadow-sm",
+      "bg-brand-green text-brand-dark-text hover:bg-brand-green-hover active:bg-brand-green-active shadow-sm",
     secondary:
-      "bg-[#3E4446] text-white hover:bg-[#4E5558] active:bg-[#353a3c]",
+      "bg-brand-input text-white hover:bg-brand-input-hover active:bg-brand-input-active",
     ghost:
-      "bg-transparent text-white hover:bg-[#252C2E] active:bg-[#1E2426]",
+      "bg-transparent text-white hover:bg-brand-hover-dark active:bg-brand-active-dark",
   }[variant];
 
   return (
     <button
       className={`${baseStyles} ${sizeStyles} ${variantStyles} ${className}`.trim()}
       disabled={disabled || isLoading}
+      aria-busy={isLoading ? "true" : undefined}
+      aria-live={isLoading ? "polite" : undefined}
       {...props}
     >
       {isLoading ? (
-        <span
-          className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"
-          data-testid="button-loading-spinner"
-        />
+        <>
+          <span
+            className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"
+            data-testid="button-loading-spinner"
+            aria-hidden="true"
+          />
+          <span className="sr-only">Carregando...</span>
+        </>
       ) : (
         <>
           {leftIcon && <span className="inline-flex shrink-0">{leftIcon}</span>}

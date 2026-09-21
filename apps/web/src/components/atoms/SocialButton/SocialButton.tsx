@@ -18,7 +18,7 @@ export const SocialButton: FC<SocialButtonProps> = ({
     <button
       type="button"
       disabled={disabled}
-      className={`flex flex-col items-center justify-center gap-1.5 p-2 rounded-xl text-[#BCBFC2] hover:text-white hover:bg-[#252C2E] active:bg-[#1E2426] transition-all cursor-pointer select-none disabled:opacity-50 disabled:cursor-not-allowed ${className}`.trim()}
+      className={`flex flex-col items-center justify-center gap-1.5 p-2 rounded-xl text-brand-muted hover:text-white hover:bg-brand-hover-dark active:bg-brand-active-dark transition-all cursor-pointer select-none disabled:opacity-50 disabled:cursor-not-allowed ${className}`.trim()}
       {...props}
     >
       <div className="w-8 h-8 flex items-center justify-center">

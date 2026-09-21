@@ -135,7 +135,7 @@ export const LoginForm: FC<LoginFormProps> = ({
         onGoogleClick={onGoogleLogin}
       />
 
-      <div className="pt-2 text-center text-xs text-[#BCBFC2] space-y-1">
+      <div className="pt-2 text-center text-xs text-brand-muted space-y-1">
         <p>Ainda não tem conta?</p>
         <div>
           <Link
